@@ -1,0 +1,56 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"nursery": {
+				"useSortedClasses": {
+					"level": "warn",
+					"fix": "safe",
+					"options": {}
+				}
+			}
+		},
+		"include": ["*.ts", "*.tsx"],
+		"ignore": [
+			".vscode/*",
+			"node_modules/*",
+			"./_types/*",
+			"./dist/*",
+			"./.turbo/*"
+		]
+	},
+	"formatter": {
+		"indentStyle": "tab",
+		"indentWidth": 4,
+		"lineEnding": "crlf",
+		"lineWidth": 80,
+		"ignore": [
+			"**/dist/**",
+			"**/node_modules/**",
+			"**/.turbo/**",
+			"**/_types/**",
+			".vscode/*"
+		]
+	},
+	"overrides": [
+		{
+			"include": ["./tsconfig.app.json", "./tsconfig.node.json"],
+			"json": {
+				"parser": {
+					"allowComments": true
+				}
+			}
+		}
+	],
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	}
+}
