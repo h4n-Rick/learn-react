@@ -1,5 +1,6 @@
 import { type FC, useState } from "react";
 import QuestionCard from "./QuestionCard";
+import { produce } from "immer";
 
 const List1: FC = () => {
 	// 列表页
@@ -12,14 +13,15 @@ const List1: FC = () => {
 
 	function add() {
 		const r = Math.random().toString().slice(-3);
-		setQuestionList([
-			...questionList,
-			{
-				id: `q${r}`,
-				title: `问卷${r}`,
-				isPublished: false,
-			},
-		]);
+		setQuestionList(
+			produce((draft) => {
+				draft.push({
+					id: `q${r}`,
+					title: `问卷${r}`,
+					isPublished: false,
+				});
+			}),
+		);
 	}
 
 	function editQuestion(id: string) {
@@ -27,16 +29,19 @@ const List1: FC = () => {
 	}
 
 	function deleteQuestion(id: string) {
-		setQuestionList(questionList.filter((q) => q.id !== id));
+		setQuestionList(
+			produce((draft) => {
+				const index = draft.findIndex((q) => q.id === id);
+				draft.splice(index, 1);
+			}),
+		);
 	}
 
 	function publishQuestion(id: string) {
 		setQuestionList(
-			questionList.map((q) => {
-				if (q.id === id) {
-					q.isPublished = true;
-				}
-				return q;
+			produce((draft) => {
+				const q = draft.find((q) => q.id === id);
+				if (q) q.isPublished = true;
 			}),
 		);
 	}
@@ -61,8 +66,7 @@ const List1: FC = () => {
 				})}
 			</div>
 			<button type="button" onClick={add}>
-				{" "}
-				新增问卷{" "}
+				新增问卷
 			</button>
 		</div>
 	);

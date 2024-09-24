@@ -3,7 +3,14 @@
 	"ignorePaths": [],
 	"dictionaryDefinitions": [],
 	"dictionaries": [],
-	"words": ["biomejs", "EDITMSG", "pico", "picocolors", "tailwindcss"],
+	"words": [
+		"biomejs",
+		"EDITMSG",
+		"immer",
+		"pico",
+		"picocolors",
+		"tailwindcss"
+	],
 	"ignoreWords": [],
 	"import": []
 }
