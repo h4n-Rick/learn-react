@@ -37,7 +37,7 @@ const rowQuestionList = [
 	},
 ];
 
-const List1: FC = () => {
+const List: FC = () => {
 	// 列表页
 	const [questionList, setQuestionList] = useState(rowQuestionList);
 
@@ -119,4 +119,4 @@ const List1: FC = () => {
 	);
 };
 
-export default List1;
+export default List;

@@ -15,7 +15,7 @@
 				}
 			}
 		},
-		"include": ["*.ts", "*.tsx"],
+		"include": ["*.ts", "*.tsx", "*.js", "*.jsx", "*.json"],
 		"ignore": [
 			".vscode/*",
 			"node_modules/*",
