@@ -1,23 +1,35 @@
 import type { FC } from "react";
+import classNames from "classnames";
 
 type PropsType = {
 	id: string;
 	title: string;
 	isPublished: boolean;
+	isStar: boolean;
+	answerCount: number;
+	createdAt: string;
 	deleteQuestion?: (id: string) => void;
 	editQuestion?: (id: string) => void;
 	publishQuestion?: (id: string) => void;
 };
 
-const QuestionCard: FC<PropsType> = (props) => {
+const QuestionCard: FC<PropsType> = (props: PropsType) => {
 	const {
 		id,
 		title,
 		isPublished,
+		isStar,
+		answerCount,
+		createdAt,
 		deleteQuestion,
 		editQuestion,
 		publishQuestion,
 	} = props;
+
+	const classes = classNames(
+		"mt-3 border  p-3",
+		isPublished ? "border-slate-500" : "border-slate-300",
+	);
 
 	function edit(id: string) {
 		editQuestion?.(id);
@@ -32,7 +44,7 @@ const QuestionCard: FC<PropsType> = (props) => {
 	}
 
 	return (
-		<div key={id} className="mt-3 border border-slate-500 p-3">
+		<div key={id} className={classes}>
 			<strong>{title}</strong>
 			&nbsp;
 			{isPublished ? (
