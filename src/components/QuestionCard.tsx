@@ -44,40 +44,34 @@ const QuestionCard: FC<PropsType> = (props: PropsType) => {
 	}
 
 	return (
-		<div key={id} className={classes}>
-			<strong>{title}</strong>
-			&nbsp;
-			{isPublished ? (
-				<span style={{ color: "green" }}>已发布</span>
-			) : (
-				<span>未发布</span>
-			)}
-			<button
-				type="button"
-				onClick={() => {
-					edit(id);
-				}}
-			>
-				编辑问卷
-			</button>
-			&nbsp;
-			<button
-				type="button"
-				onClick={() => {
-					publish(id);
-				}}
-			>
-				发布问卷
-			</button>
-			&nbsp;
-			<button
-				type="button"
-				onClick={() => {
-					del(id);
-				}}
-			>
-				删除问卷
-			</button>
+		<div className="mb-5 rounded p-3 bg-white hover:shadow">
+			<div className="flex">
+				<div className="flex-1">
+					<a href="javascript:void(0)">{title}</a>
+				</div>
+				<div className="flex-1 text-right text-xs">
+					{isPublished ? (
+						<span className="text-green-500">已发布</span>
+					) : (
+						<span>未发布</span>
+					)}
+					&nbsp;
+					<span>答卷: {answerCount}</span>
+					&nbsp;
+					<span>{createdAt}</span>
+				</div>
+			</div>
+			<div className="flex">
+				<div className="flex-1">
+					<button className="bg-slate-500">编辑问卷</button>
+					<button className="bg-slate-500">数据统计</button>
+				</div>
+				<div className="flex-1 text-right">
+					<button className="bg-slate-500">标星</button>
+					<button className="bg-slate-500">复制</button>
+					<button className="bg-slate-500">删除</button>
+				</div>
+			</div>
 		</div>
 	);
 };

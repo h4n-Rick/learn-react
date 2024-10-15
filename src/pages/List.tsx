@@ -49,6 +49,9 @@ const List: FC = () => {
 					id: `q${r}`,
 					title: `问卷${r}`,
 					isPublished: false,
+					isStar: false,
+					answerCount: 0,
+					createdAt: new Date().toLocaleString(),
 				});
 			}),
 		);
@@ -94,28 +97,6 @@ const List: FC = () => {
 			</div>
 			<div className="text-center">footer</div>
 		</>
-		// <div>
-		// 	<h1>问卷列表页</h1>
-		// 	<div>
-		// 		{questionList.map((question) => {
-		// 			const { id, title, isPublished } = question;
-		// 			return (
-		// 				<QuestionCard
-		// 					key={id}
-		// 					id={id}
-		// 					title={title}
-		// 					isPublished={isPublished}
-		// 					editQuestion={editQuestion}
-		// 					deleteQuestion={deleteQuestion}
-		// 					publishQuestion={publishQuestion}
-		// 				/>
-		// 			);
-		// 		})}
-		// 	</div>
-		// 	<button type="button" onClick={add}>
-		// 		新增问卷
-		// 	</button>
-		// </div>
 	);
 };
 
