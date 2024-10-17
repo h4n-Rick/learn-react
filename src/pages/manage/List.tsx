@@ -1,6 +1,7 @@
 import { type FC, useState } from "react";
 import QuestionCard from "../../components/QuestionCard";
 import { produce } from "immer";
+import { useTitle } from "ahooks";
 
 const rowQuestionList = [
 	{
@@ -38,6 +39,8 @@ const rowQuestionList = [
 ];
 
 const List: FC = () => {
+	useTitle("小慕问卷 - 我的问卷");
+
 	// 列表页
 	const [questionList, setQuestionList] = useState(rowQuestionList);
 

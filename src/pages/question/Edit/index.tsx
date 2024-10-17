@@ -1,7 +1,10 @@
 import type { FC } from "react";
+import { useParams } from "react-router-dom";
 
 const Edit: FC = () => {
-	return <div>Edit</div>;
+	const { id = "" } = useParams();
+
+	return <div>Edit {id}</div>;
 };
 
 export default Edit;

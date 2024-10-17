@@ -15,7 +15,7 @@ import QuestionLayout from "../layouts/QuestionLayout";
 import Edit from "../pages/question/Edit";
 import Stat from "../pages/question/Stat";
 
-const router = createBrowserRouter([
+const router: ReturnType<typeof createBrowserRouter> = createBrowserRouter([
 	{
 		path: "/",
 		element: <MainLayout />,

@@ -21,6 +21,7 @@
 		"commit-msg": "node scripts/verify-commit.js"
 	},
 	"dependencies": {
+		"ahooks": "^3.8.1",
 		"classnames": "^2.5.1",
 		"immer": "^10.1.1",
 		"react": "^18.3.1",
