@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Home: FC = () => {
 	const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Home: FC = () => {
 	return (
 		<>
 			<div>Home</div>
-			<button onClick={clickHandler}>登录</button>
+			<Button onClick={clickHandler}>登录</Button>
 		</>
 	);
 };
